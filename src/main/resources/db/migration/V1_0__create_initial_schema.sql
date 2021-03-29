@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS tutor.lesson (
     comment VARCHAR(200) NULL,
     home_work VARCHAR(200) NULL,
     PRIMARY KEY (id),
-    CONSTRAINT fk_user_id
+    CONSTRAINT fk_user_l_id
         FOREIGN KEY (student_id)
             REFERENCES user (id)
             ON DELETE CASCADE
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS tutor.message (
     user_id BIGINT NOT NULL,
     text VARCHAR(200) NULL,
     PRIMARY KEY (id),
-    CONSTRAINT fk_user_id
+    CONSTRAINT fk_user_m_id
         FOREIGN KEY (user_id)
             REFERENCES user (id)
             ON DELETE NO ACTION
